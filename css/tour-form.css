@@ -1,0 +1,533 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/tour-form-banner.jpg") center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form {
+  height: 610px;
+  width: 570px;
+  background: #fff;
+  padding: 23px 40px 30px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 16px #ccc;
+  box-shadow: 0 4px 16px #ccc;
+  z-index: 10;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form__label {
+  font-size: 16px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.form__item__dates-line {
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  margin: 0 5px;
+  background-color: #000;
+}
+
+.form__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.form__item__days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__input {
+  width: 210px;
+  height: 45px;
+  font-size: 16px;
+  border: 2px #14cefb solid;
+  border-radius: 5px;
+  background-color: #FCFEFE;
+}
+
+.form__select {
+  text-align: center;
+}
+
+.input__test {
+  text-align: center;
+}
+
+.form-input__range {
+  position: absolute;
+  top: 43px;
+  border: 0;
+  left: -5px;
+}
+
+.form__input__number {
+  text-align: center;
+}
+
+input[type=range] {
+  height: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 215px;
+  position: absolute;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffc600), to(#ff9400));
+  background: linear-gradient(to bottom, #ffc600, #ff9400);
+  border-radius: 10px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+.installment__form-item--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.form__button {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  background: inherit;
+  font-weight: bold;
+  border: 1px #fff solid;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: linear-gradient(-235deg, #0ea5ea 0, #14cefb 100%);
+}
+
+.form__button:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: #000;
+  border: 0;
+  color: #000;
+  border: 1px #000 solid;
+  transition: 0.3s;
+  background: inherit;
+  cursor: pointer;
+}
+
+.header__form__agreement {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 5px;
+  line-height: 14px;
+  max-width: 450px;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.form__connection-input {
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+}
+
+.form__connection__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__content {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__block--4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__input--double {
+  width: 205px;
+  color: #000;
+}
+
+.form__input--date {
+  padding-left: 20px;
+}
+
+.form__input--padding {
+  padding-left: 15px;
+}
+
+.form__connection__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__connection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form__connection__block--left {
+  margin-right: 50px;
+}
+
+.form__connection__item--top {
+  margin-bottom: 10px;
+}
+
+.form__item--last {
+  margin-right: 0;
+}
+
+.form__input--double--1 {
+  position: relative;
+}
+.form__input--double--1::after {
+  position: absolute;
+  content: "c";
+  left: 32px;
+  top: 10px;
+}
+
+.form__input--double--2 {
+  position: relative;
+}
+.form__input--double--2::after {
+  position: absolute;
+  content: "по";
+  left: 20px;
+  top: 10px;
+}
+
+.form__input--double--3 {
+  position: relative;
+}
+.form__input--double--3::after {
+  position: absolute;
+  content: "от";
+  bottom: 8px;
+  left: 63px;
+}
+
+.form__input--double--4 {
+  position: relative;
+}
+.form__input--double--4::after {
+  position: absolute;
+  content: "до";
+  bottom: 8px;
+  left: 62px;
+}
+.form__item__dates-line--1 {
+  margin: 0;
+}
+
+.form-input__range--last[type=range] {
+  width: 215px;
+}
+
+@media screen and (max-width: 1275px) {
+  .wrapper {
+    overflow-y: scroll;
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .form__block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .form {
+    padding: 25px 30px;
+    width: 550px;
+    height: auto;
+    position: relative;
+    top: 50%;
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .form__item {
+    margin-right: 0;
+  }
+
+  .form__button {
+    margin-bottom: 10px;
+  }
+
+  .header__success {
+    top: auto;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 580px) {
+  .form {
+    width: 380px;
+    padding: 20px 15px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+
+  .form__input--double {
+    width: 140px;
+  }
+
+  .form__input--double--1::after {
+    left: 10px;
+    top: 11px;
+  }
+
+  .form__input--double--2::after {
+    left: 10px;
+    top: 11px;
+  }
+
+  .form__input--date {
+    padding-left: 35px;
+  }
+
+  .form__input--double--3 {
+    position: relative;
+  }
+  .form__input--double--3::after {
+    position: absolute;
+    content: "от";
+    bottom: 8px;
+    left: 40px;
+  }
+
+  .form__input--double--4 {
+    position: relative;
+  }
+  .form__input--double--4::after {
+    position: absolute;
+    content: "до";
+    bottom: 8px;
+    left: 40px;
+    opacity: 1;
+  }
+
+  input[type=range] {
+    height: 0;
+    width: 150px;
+  }
+
+  .form-input__range--last[type=range] {
+    height: 0;
+    width: 215px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .header__success {
+    width: 320px;
+  }
+}

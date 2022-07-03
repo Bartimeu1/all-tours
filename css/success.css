@@ -1,0 +1,190 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/tour-form-banner.jpg") center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.header__success {
+    -webkit-transition: 10s;
+    transition: 10s;
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 350px;
+    width: 400px;
+    background: #fff;
+    text-align: center;
+    font-family: sans-serif;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border-radius: 10px;
+    -webkit-box-shadow: 0 4px 16px #ccc;
+    box-shadow: 0 4px 16px #ccc;
+    z-index: 11;
+}
+.success-logo {
+    width: 250px;
+    margin-bottom: 10px;
+}
+.header__success-text {
+    margin-bottom: 20px;
+}
+.success-text {
+    margin-bottom: 10px;
+}
+.success-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    background: inherit;
+    font-weight: bold;
+    border: 1px #fff solid;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    background: linear-gradient(-235deg, #0ea5ea 0, #14cefb 100%);
+  }
+  
+  .success-button:hover {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    background: #000;
+    border: 0;
+    color: #000;
+    border: 1px #000 solid;
+    transition: 0.3s;
+    background: inherit;
+    cursor: pointer;
+  }
+  .header__form-close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  @media screen and (max-width: 430px) {
+    .header__success {
+      width: 320px;
+    }
+  }

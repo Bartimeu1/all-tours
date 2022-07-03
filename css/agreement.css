@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.title {
+    text-align: center;
+    margin-bottom: 5px;
+}
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.second {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.second--left-margin {
+    margin-bottom: 10px;
+}
+.second--left--bold {
+    font-weight: bold;
+}
+.second--left--bold--margin {
+    margin-bottom: 10px;
+}
+.text--last {
+    position: relative;
+    margin-bottom: 10px;
+}
+.text--last::after {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: #000;
+    bottom: -10px;
+    left: 0;
+    display: block;
+    content: '';
+}
+.text--important {
+    position: relative;
+    margin-top: 25px;
+    padding-left: 70px;
+    padding-bottom: 50px;
+}
+.text--important::after {
+    position: absolute;
+    width: 140px;
+    height: 2px;
+    background: #000;
+    top: -3px;
+    display: block;
+    content: '';
+}
+@media screen and (max-width: 1450px) {
+    .text {
+        font-size: 13px;
+    }
+    .container {
+        max-width: 1200px;
+    }
+    .title {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .text--last::after {
+        width: 90px;
+    }
+}
