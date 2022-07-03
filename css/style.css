@@ -2664,6 +2664,9 @@ input[type=range]::-webkit-slider-thumb {
   .installment__form-title {
     font-size: 17px;
   }
+  .banner {
+    padding-top: 56px;
+  }
 }
 @media screen and (max-width: 410px) {
   .header-tel {
